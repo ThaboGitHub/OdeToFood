@@ -1,0 +1,27 @@
+﻿@page
+@model OdeToFood.Pages.Restuarants.ListModel
+@{
+}
+<h1>Restuarants</h1>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" value="" name="searchTerm" />
+            <span class="p-1"><button type="submit"> Search
+                @*<i class="glyphicon glyphicon-search"></i>*@
+                </button>
+            </span>
+        </div>
+
+    </div>
+</form>
+<table class="table">
+    @foreach (var rest in Model.Restuarants)
+    {
+        <tr>
+            <td>@rest.Name</td>
+            <td>@rest.Location</td>
+            <td>@rest.Cousine.ToString()</td>
+        </tr>
+    }
+</table>
